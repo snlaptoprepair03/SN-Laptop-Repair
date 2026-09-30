@@ -1,0 +1,386 @@
+HTML
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>SN Laptop Repair</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f5f5f5;
+    color:#222;
+}
+
+nav{
+    background:#111827;
+    color:white;
+    padding:18px 7%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    position:sticky;
+    top:0;
+    z-index:1000;
+}
+
+.logo{
+    font-size:24px;
+    font-weight:bold;
+}
+
+.logo span{
+    color:#ef4444;
+}
+
+nav ul{
+    display:flex;
+    list-style:none;
+    gap:20px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+}
+
+.hero{
+    min-height:90vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:30px 20px;
+    background:linear-gradient(135deg,#111827,#374151);
+    color:white;
+}
+
+.hero h1{
+    font-size:50px;
+    margin-bottom:20px;
+}
+
+.hero h1 span{
+    color:#ef4444;
+}
+
+.hero p{
+    font-size:19px;
+    line-height:1.6;
+    max-width:700px;
+}
+
+.location{
+    margin:20px;
+    font-size:18px;
+}
+
+.btn{
+    display:inline-block;
+    padding:14px 25px;
+    margin:7px;
+    border-radius:8px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.red{
+    background:#ef4444;
+    color:white;
+}
+
+.white{
+    background:white;
+    color:#111827;
+}
+
+section{
+    padding:70px 7%;
+}
+
+.title{
+    text-align:center;
+    font-size:35px;
+    margin-bottom:40px;
+}
+
+.services{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    text-align:center;
+    border-radius:12px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.icon{
+    font-size:45px;
+    margin-bottom:15px;
+}
+
+.card h3{
+    margin-bottom:10px;
+}
+
+.card p{
+    color:#666;
+    line-height:1.6;
+}
+
+.about{
+    background:white;
+    text-align:center;
+}
+
+.about p{
+    max-width:750px;
+    margin:auto;
+    font-size:18px;
+    line-height:1.8;
+    color:#555;
+}
+
+.contact{
+    background:#111827;
+    color:white;
+    text-align:center;
+}
+
+.contact p{
+    margin:12px;
+    color:#ddd;
+}
+
+.social{
+    display:inline-block;
+    padding:13px 20px;
+    margin:7px;
+    border-radius:8px;
+    color:white;
+    text-decoration:none;
+    font-weight:bold;
+}
+
+.whatsapp{
+    background:#25D366;
+}
+
+.facebook{
+    background:#1877F2;
+}
+
+.instagram{
+    background:#E1306C;
+}
+
+footer{
+    background:#080d18;
+    color:#aaa;
+    text-align:center;
+    padding:20px;
+}
+
+@media(max-width:768px){
+
+    nav{
+        flex-direction:column;
+        gap:15px;
+    }
+
+    nav ul{
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero h1{
+        font-size:38px;
+    }
+
+    .services{
+        grid-template-columns:1fr;
+    }
+
+    .title{
+        font-size:30px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<div class="logo">
+SN <span>Laptop Repair</span>
+</div>
+
+<ul>
+<li><a href="#home">Home</a></li>
+<li><a href="#services">Services</a></li>
+<li><a href="#about">About</a></li>
+<li><a href="#contact">Contact</a></li>
+</ul>
+
+</nav>
+
+
+<section class="hero" id="home">
+
+<div>
+
+<h1>
+SN <span>Laptop Repair</span>
+</h1>
+
+<p>
+Laptop troubles? We've got the fix!
+From software issues to hardware repairs,
+we provide reliable laptop repair services.
+</p>
+
+<div class="location">
+📍 Bansagopal, Bhaktapur
+</div>
+
+<a href="#services" class="btn red">
+Our Services
+</a>
+
+<a href="#contact" class="btn white">
+Contact Us
+</a>
+
+</div>
+
+</section>
+
+
+<section id="services">
+
+<h2 class="title">
+Our Services
+</h2>
+
+<div class="services">
+
+<div class="card">
+<div class="icon">💻</div>
+<h3>Laptop Repair</h3>
+<p>Professional laptop repair and troubleshooting.</p>
+</div>
+
+<div class="card">
+<div class="icon">🔧</div>
+<h3>Hardware Repair</h3>
+<p>Hardware problems and component replacement.</p>
+</div>
+
+<div class="card">
+<div class="icon">⚙️</div>
+<h3>Software Service</h3>
+<p>Windows installation and software problems.</p>
+</div>
+
+<div class="card">
+<div class="icon">🔩</div>
+<h3>Hinge Repair</h3>
+<p>Laptop hinge repair and replacement.</p>
+</div>
+
+<div class="card">
+<div class="icon">🧹</div>
+<h3>Laptop Servicing</h3>
+<p>Cleaning and regular laptop maintenance.</p>
+</div>
+
+<div class="card">
+<div class="icon">🖥️</div>
+<h3>Display Problems</h3>
+<p>Diagnosis and repair of laptop display problems.</p>
+</div>
+
+</div>
+
+</section>
+
+
+<section class="about" id="about">
+
+<h2 class="title">
+About SN Laptop Repair
+</h2>
+
+<p>
+SN Laptop Repair is a laptop repair and servicing business
+located at Bansagopal, Bhaktapur. We provide hardware,
+software, servicing and repair solutions with reliable service.
+</p>
+
+</section>
+
+
+<section id="contact" class="contact">
+
+<h2 class="title">
+Contact SN Laptop Repair
+</h2>
+
+<p>📍 Bansagopal, Bhaktapur</p>
+
+<p>Contact us through social media.</p>
+
+
+<!-- CHANGE THESE LINKS -->
+
+<a href="https://wa.me/9761118109"
+target="_blank"
+class="social whatsapp">
+💬 WhatsApp
+</a>
+
+<a href="https://facebook.com/SN Laptop Repair"
+target="_blank"
+class="social facebook">
+👍 Facebook
+</a>
+
+<a href="https://instagram.com/sn_laptoprepair03"
+target="_blank"
+class="social instagram">
+📷 Instagram
+</a>
+
+</section>
+
+
+<footer>
+
+© 2026 SN Laptop Repair |
+Bansagopal, Bhaktapur
+
+</footer>
+
+</body>
+</html>
+
+
+
+
