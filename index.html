@@ -214,6 +214,55 @@ footer{
     }
 
     .services{
+    .products{
+        grid-template-colume:1fr;
+    }
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+}
+
+.product-card{
+    background:white;
+    border-radius:12px;
+    overflow:hidden;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    text-align:center;
+    padding-bottom:20px;
+}
+
+.product-card img{
+    width:100%;
+    height:220px;
+    object-fit:cover;
+}
+
+.product-card h3{
+    margin:15px 10px 8px;
+}
+
+.product-card p{
+    color:#666;
+    margin:8px 15px;
+}
+
+.price{
+    font-size:22px;
+    font-weight:bold;
+    color:#ef4444;
+    margin:12px;
+}
+
+.order-btn{
+    display:inline-block;
+    background:#111827;
+    color:white;
+    padding:11px 20px;
+    border-radius:7px;
+    text-decoration:none;
+    font-weight:bold;
+}
+
         grid-template-columns:1fr;
     }
 
@@ -241,6 +290,7 @@ alt="SN Laptop Repair Logo">
 <ul>
 <li><a href="#home">Home</a></li>
 <li><a href="#services">Services</a></li>
+<li><a href="#products">Products</a></li>
 <li><a href="#about">About</a></li>
 <li><a href="#contact">Contact</a></li>
 </ul>
@@ -326,6 +376,34 @@ Our Services
 </div>
 
 </section>
+
+    <section id="products">
+
+<h2 class="title">
+Our Products
+</h2>
+
+<div class="products">
+
+<div class="product-card">
+<img src="laptop-cooler.jpg" alt="Laptop Cooler">
+
+<h3>Laptop Cooler</h3>
+
+<p>Cooling pad for better laptop performance.</p>
+
+<div class="price">Rs. 1200</div>
+
+<a href="#contact" class="order-btn">
+Order Now
+</a>
+
+</div>
+
+</div>
+
+</section>
+
 
 
 <section class="about" id="about">
