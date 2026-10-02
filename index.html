@@ -402,6 +402,8 @@ Our Services
         </button>
 
     </div>
+            
+ <div id="productList"></div>           
 
 <h2 class="title">
 Our Products
@@ -485,13 +487,14 @@ class="social instagram">
 Bansagopal, Bhaktapur
 
 </footer>
-        
-<script>
+     <script>
+
 function showProductForm() {
     document.getElementById("productForm").style.display = "block";
 }
 
 function saveProduct() {
+
     const name = document.getElementById("productName").value;
     const price = document.getElementById("productPrice").value;
     const image = document.getElementById("productImage").value;
@@ -501,13 +504,64 @@ function saveProduct() {
         return;
     }
 
-    alert("Product added: " + name + " - Rs. " + price);
+    const product = {
+        name: name,
+        price: price,
+        image: image
+    };
+
+    let products = JSON.parse(localStorage.getItem("snProducts")) || [];
+
+    products.push(product);
+
+    localStorage.setItem("snProducts", JSON.stringify(products));
+
+    displayProducts();
 
     document.getElementById("productName").value = "";
     document.getElementById("productPrice").value = "";
     document.getElementById("productImage").value = "";
+
+    alert("Product added successfully!");
 }
-</script>
+
+function displayProducts() {
+
+    let products = JSON.parse(localStorage.getItem("snProducts")) || [];
+
+    let productList = document.getElementById("productList");
+
+    productList.innerHTML = "";
+
+    products.forEach(function(product) {
+
+        productList.innerHTML += `
+            <div style="
+                border:1px solid #ddd;
+                padding:15px;
+                margin:15px 0;
+                border-radius:10px;
+                text-align:center;
+            ">
+
+                ${product.image ? 
+                `<img src="${product.image}" 
+                style="width:180px;height:150px;object-fit:cover;border-radius:8px;">`
+                : ""}
+
+                <h3>${product.name}</h3>
+
+                <p><strong>Rs. ${product.price}</strong></p>
+
+            </div>
+        `;
+    });
+}
+
+displayProducts();
+
+</script>   
+
 
 </body>
 </html>
