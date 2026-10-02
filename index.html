@@ -378,6 +378,30 @@ Our Services
 </section>
 
     <section id="products">
+        <section id="products">
+
+    <button onclick="showProductForm()">
+        ＋ Add Product
+    </button>
+
+    <div id="productForm" style="display:none; margin:20px 0;">
+
+        <h3>Add New Product</h3>
+
+        <input type="text" id="productName"
+               placeholder="Product Name">
+
+        <input type="number" id="productPrice"
+               placeholder="Price">
+
+        <input type="text" id="productImage"
+               placeholder="Image filename">
+
+        <button onclick="saveProduct()">
+            Add Product
+        </button>
+
+    </div>
 
 <h2 class="title">
 Our Products
@@ -461,6 +485,29 @@ class="social instagram">
 Bansagopal, Bhaktapur
 
 </footer>
+        
+<script>
+function showProductForm() {
+    document.getElementById("productForm").style.display = "block";
+}
+
+function saveProduct() {
+    const name = document.getElementById("productName").value;
+    const price = document.getElementById("productPrice").value;
+    const image = document.getElementById("productImage").value;
+
+    if (name === "" || price === "") {
+        alert("Please enter product name and price.");
+        return;
+    }
+
+    alert("Product added: " + name + " - Rs. " + price);
+
+    document.getElementById("productName").value = "";
+    document.getElementById("productPrice").value = "";
+    document.getElementById("productImage").value = "";
+}
+</script>
 
 </body>
 </html>
