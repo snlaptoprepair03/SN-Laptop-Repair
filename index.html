@@ -275,11 +275,87 @@ footer{
     }
 }
 </style>
+    <style>
+#welcomeScreen{
+    position:fixed;
+    inset:0;
+    background:#111827;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    z-index:99999;
+}
+
+.welcome-box{
+    background:white;
+    color:#111827;
+    padding:35px;
+    border-radius:15px;
+    width:90%;
+    max-width:400px;
+}
+
+.welcome-box h1{
+    margin-bottom:10px;
+}
+
+.welcome-box p{
+    color:#666;
+    margin-bottom:25px;
+}
+
+.welcome-btn{
+    display:block;
+    width:100%;
+    padding:14px;
+    margin:12px 0;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.customer-btn{
+    background:#ef4444;
+    color:white;
+}
+
+.admin-btn{
+    background:#111827;
+    color:white;
+}
+</style>
+
 </head>
 
 <body>
 
-<nav>
+    <div id="welcomeScreen">
+
+    <div class="welcome-box">
+
+        <h1>SN Laptop Repair</h1>
+
+        <p>Welcome! Please choose an option.</p>
+
+        <button class="welcome-btn customer-btn"
+                onclick="continueAsCustomer()">
+            👤 Continue as Customer
+        </button>
+
+        <button class="welcome-btn admin-btn"
+                onclick="adminLogin()">
+            🔐 Admin Login
+        </button>
+
+    </div>
+
+</div>
+
+    <nav>
 
 <div class="logo">
     <img src="logo.png"
@@ -491,6 +567,13 @@ Bansagopal, Bhaktapur
 
 </footer>
      <script>
+         
+         function continueAsCustomer() {
+
+    document.getElementById("welcomeScreen").style.display = "none";
+
+}
+         
 function adminLogin() {
 
     const email = prompt("Enter Admin Email:");
