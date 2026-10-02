@@ -477,7 +477,7 @@ Our Services
                placeholder="Price">
 
         <input type="text" id="productImage"
-               placeholder="Image filename">
+             accept="image/*">
 
         <button onclick="saveProduct()">
             Add Product
@@ -589,6 +589,8 @@ function adminLogin() {
     ) {
 
         sessionStorage.setItem("snAdmin", "true");
+
+        document.getElementById("welcomeScreen").style.display = "none";
 
         document.getElementById("productForm").style.display = "block";
 
