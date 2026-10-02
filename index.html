@@ -476,7 +476,7 @@ Our Services
         <input type="number" id="productPrice"
                placeholder="Price">
 
-        <input type="text" id="productImage"
+        <input type="file" id="productImage"
              accept="image/*">
 
         <button onclick="saveProduct()">
@@ -614,36 +614,58 @@ function showProductForm() {
     document.getElementById("productForm").style.display = "block";
 }
 
-function saveProduct() {
+function saveProduct(
+    function saveProduct() {
+
+    if (sessionStorage.getItem("snAdmin") !== "true") {
+        alert("Admin login required.");
+        return;
+    }
 
     const name = document.getElementById("productName").value;
     const price = document.getElementById("productPrice").value;
-    const image = document.getElementById("productImage").value;
+    const imageFile = document.getElementById("productImage").files[0];
 
     if (name === "" || price === "") {
         alert("Please enter product name and price.");
         return;
     }
 
-    const product = {
-        name: name,
-        price: price,
-        image: image
+    if (!imageFile) {
+        alert("Please select a product image.");
+        return;
+    }
+
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+
+        const product = {
+            name: name,
+            price: price,
+            image: e.target.result
+        };
+
+        let products =
+            JSON.parse(localStorage.getItem("snProducts")) || [];
+
+        products.push(product);
+
+        localStorage.setItem(
+            "snProducts",
+            JSON.stringify(products)
+        );
+
+        displayProducts();
+
+        document.getElementById("productName").value = "";
+        document.getElementById("productPrice").value = "";
+        document.getElementById("productImage").value = "";
+
+        alert("Product added successfully!");
     };
 
-    let products = JSON.parse(localStorage.getItem("snProducts")) || [];
-
-    products.push(product);
-
-    localStorage.setItem("snProducts", JSON.stringify(products));
-
-    displayProducts();
-
-    document.getElementById("productName").value = "";
-    document.getElementById("productPrice").value = "";
-    document.getElementById("productImage").value = "";
-
-    alert("Product added successfully!");
+    reader.readAsDataURL(imageFile);
 }
 
          function displayProducts() {
