@@ -517,12 +517,14 @@ Contact Us
     <section class="main-options">
 
     <a href="#services" class="main-option">
+        oneclick="showService(event)">
         <div class="option-icon">🔧</div>
         <h2>Our Services</h2>
         <p>View our laptop repair services</p>
     </a>
 
     <a href="#products" class="main-option">
+        oneclick="showProducts(event)">
         <div class="option-icon">🛍️</div>
         <h2>Our Products</h2>
         <p>View our available products</p>
@@ -531,6 +533,7 @@ Contact Us
 </section>
 
 <section id="services">
+style="display:none;">
 
 <h2 class="title">
 Our Services
@@ -579,7 +582,7 @@ Our Services
 </section>
 
     <section id="products">
-        <section id="products">
+    style="display:none;">
 
     <div id="adminArea" style="text-align:center; margin-bottom:20px;">
     <button onclick="adminLogin()">
@@ -865,6 +868,31 @@ displayProducts();
 
 </script>   
 
+  <script>
+
+function showServices(event) {
+    event.preventDefault();
+
+    document.getElementById("services").style.display = "block";
+    document.getElementById("products").style.display = "none";
+
+    document.getElementById("services").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+function showProducts(event) {
+    event.preventDefault();
+
+    document.getElementById("services").style.display = "none";
+    document.getElementById("products").style.display = "block";
+
+    document.getElementById("products").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+</script>      
 
 </body>
 </html>
