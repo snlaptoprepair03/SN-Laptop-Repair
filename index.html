@@ -380,11 +380,13 @@ Our Services
     <section id="products">
         <section id="products">
 
-    <button onclick="showProductForm()">
-        ＋ Add Product
+    <div id="adminArea" style="text-align:center; margin-bottom:20px;">
+    <button onclick="adminLogin()">
+        🔐 Admin Login
     </button>
-
-    <div id="productForm" style="display:none; margin:20px 0;">
+</div>
+    
+     <div id="productForm" style="display:none; margin:20px 0;">
 
         <h3>Add New Product</h3>
 
@@ -489,6 +491,35 @@ Bansagopal, Bhaktapur
 
 </footer>
      <script>
+function adminLogin() {
+
+    const email = prompt("Enter Admin Email:");
+    const password = prompt("Enter Admin Password:");
+
+    if (
+        email === "somethingsn28@gmail.com" &&
+        password === "paisapaisapaisa$$$"
+    ) {
+
+        sessionStorage.setItem("snAdmin", "true");
+
+        document.getElementById("productForm").style.display = "block";
+
+        document.getElementById("adminArea").innerHTML = `
+            <button onclick="adminLogout()">
+                🔓 Admin Logout
+            </button>
+        `;
+
+        displayProducts();
+
+        alert("Admin Login Successful!");
+
+    } else {
+
+        alert("Wrong Email or Password!");
+    }
+}
 
 function showProductForm() {
     document.getElementById("productForm").style.display = "block";
@@ -527,6 +558,8 @@ function saveProduct() {
 }
 
          function displayProducts() {
+            
+    const isAdmin = sessionStorage.getItem("snAdmin") === "true";
 
     let products = JSON.parse(localStorage.getItem("snProducts")) || [];
 
@@ -562,17 +595,19 @@ function saveProduct() {
                 <br><br>
 
                 <button onclick="deleteProduct(${index})"
-                style="
-                    background:#ef4444;
-                    color:white;
-                    border:none;
-                    padding:10px 18px;
-                    border-radius:7px;
-                    cursor:pointer;
-                    font-weight:bold;
-                ">
-                    🗑️ Delete Product
-                </button>
+style="
+    display:${isAdmin ? "inline-block" : "none"};
+    background:#ef4444;
+    color:white;
+    border:none;
+    padding:10px 18px;
+    border-radius:7px;
+    cursor:pointer;
+    font-weight:bold;
+">
+    🗑️ Delete Product
+</button>
+
 
             </div>
         `;
