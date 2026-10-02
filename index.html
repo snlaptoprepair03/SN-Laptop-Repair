@@ -125,7 +125,7 @@ section{
     font-size:35px;
     margin-bottom:40px;
 }
-
+       
 .services,
 .products{
     display:grid;
@@ -133,6 +133,39 @@ section{
     gap:25px;
 }
 
+.main-options{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:20px;
+    padding:40px 7%;
+}
+
+.main-option{
+    background:white;
+    padding:30px 15px;
+    border-radius:15px;
+    text-align:center;
+    text-decoration:none;
+    color:#111827;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+}
+
+.option-icon{
+    font-size:50px;
+    margin-bottom:12px;
+}
+
+.main-option h2{
+    font-size:24px;
+    margin-bottom:8px;
+}
+
+.main-option p{
+    color:#666;
+    font-size:14px;
+}
+
+        
 .card,
 .product-card{
     background:white;
@@ -481,6 +514,21 @@ Contact Us
 
 </section>
 
+    <section class="main-options">
+
+    <a href="#services" class="main-option">
+        <div class="option-icon">🔧</div>
+        <h2>Our Services</h2>
+        <p>View our laptop repair services</p>
+    </a>
+
+    <a href="#products" class="main-option">
+        <div class="option-icon">🛍️</div>
+        <h2>Our Products</h2>
+        <p>View our available products</p>
+    </a>
+
+</section>
 
 <section id="services">
 
